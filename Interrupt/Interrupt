@@ -1,0 +1,12 @@
+                                                                    //  2 May 2021  //
+
+/* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)  
+{
+if(htim->Instance==TIM1)   //TIMER1'de kesme meydana geldiği zaman
+{
+
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13); }
+}
+
+/* USER CODE END 4 */
