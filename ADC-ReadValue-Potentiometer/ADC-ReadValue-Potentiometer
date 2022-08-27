@@ -1,0 +1,30 @@
+                                                                    //  25 Apr 2021  //
+
+/* USER CODE BEGIN PV */
+
+   uint32_t deger;
+
+/* USER CODE END PV */
+
+while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+
+	 HAL_Delay(100);
+	  HAL_ADC_Start(&hadc1);
+	  HAL_ADC_PollForConversion(&hadc1, 100);
+
+	 deger = HAL_ADC_GetValue(&hadc1);
+	  HAL_ADC_Stop (&hadc1);
+
+	  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4, GPIO_PIN_SET);
+	  	HAL_Delay (deger);
+
+
+	  	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4, GPIO_PIN_RESET);
+	  	HAL_Delay (deger);
+  }
+  /* USER CODE END 3 */
+}
